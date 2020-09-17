@@ -46,7 +46,7 @@ nav > a:hover {
 #welcome-section img {
     position: relative;
     top: 60px;
-    border-radius: 10px;
+    border-radius: 50%;
     max-width: 450px;
     justify-self: center;
 }
