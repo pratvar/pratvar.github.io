@@ -7,6 +7,7 @@ body {
     font-family: lato, sans-serif;
 }
 nav {
+    z-index: 5;
     font-weight: bold;
     position: fixed;
     display: grid;
@@ -161,4 +162,19 @@ nav > a:hover {
 }
 #email:hover {
     color: #d94a3e
+}
+
+
+@media only screen and (max-width: 1070px) {
+    #welcome-section {
+        display: flex;
+        flex-direction: column;
+    }
+    #welcome-section img {
+        position: relative;
+        top: 0px;
+        border-radius: 50%;
+        max-width: 400px;
+        margin: 40px;
+    }
 }
