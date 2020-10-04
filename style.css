@@ -53,7 +53,7 @@ nav > a:hover {
 }
 #welcome-section i {
     position: relative;
-    animation: updown 1s infinite linear;
+    animation: updown 1s infinite;
 }
 @keyframes updown {
     0% {bottom: 0px;}
