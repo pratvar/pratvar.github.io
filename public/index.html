@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <script src="https://kit.fontawesome.com/775cd725b8.js" crossorigin="anonymous"></script>
     <meta
       name="description"
       content="I'm Pratik Var, a front-end developer who loves building simple yet beautiful UIs. Have a look at my portfolio."
@@ -25,20 +25,26 @@
     <div id="root">
       <nav>
         <ul>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">SKILLS</a></li>
-          <li><a href="#">PROJECTS</a></li>
-          <li><a href="#">CONTACT</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">SKILLS</a></li>
+        <li><a href="#">PROJECTS</a></li>
+        <li><a href="#">CONTACT</a></li>
         </ul>
       </nav>
       <div id="body">
         <header>
+          <div id="important-links">
+            <a href="https://github.com/pratvar" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/pratvar" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="CV/Resume"><i class="fas fa-file-pdf"></i></a>
+            <div id="darkmodetoggle"></div>
+          </div>
           <div id="profile-photo">
-            <img width="200" src="%PUBLIC_URL%/images/circle-head.png" alt="Profile photo">
+            <img width="250" src="%PUBLIC_URL%/images/circle-head.png" alt="Profile photo" />
           </div>
-          <div id="intro">
-            <h1>Hi, I'm Pratik Var<br/><span>a front-end developer.</span></h1>
-          </div>
+            <div id="intro">
+              <h1>Hi, I'm Pratik Var<br/><span>a front-end developer.</span></h1>
+            </div>
         </header>
       </div>
     </div>

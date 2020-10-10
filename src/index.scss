@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Quicksand|Inconsolata');
 
 html {
     scroll-behavior: smooth;
@@ -8,22 +8,91 @@ body {
     margin: 0;
     font-family: roboto, sans-serif;
 }
+a {
+    text-decoration: none;
+}
 div#root {
-    margin: auto;
-    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "a b";
     nav {
-        float: right;
+        background: #212121;
+        grid-area: b;
+        font-family: inconsolata, consolas;
+        height: 100vh;
         ul {
+            height: fit-content;
             list-style: none;
+            padding: 0;
+            margin-top: 100px;
+            li {
+                margin: 40px 30px;
+                a {
+                    color: lightgray;
+                    font-size: 20px;
+                }
+            }
         }
     }
     div#body {
+        background: #141414;
+        color: white;
         header {
-            
+            display: grid;
+            grid-template-columns: auto auto;
+            div#important-links {
+                margin: 10px;
+                grid-column: span 2;
+                justify-self: flex-end;
+                display: grid;
+                align-items: center;
+                grid-template-columns: repeat(4, auto);
+                grid-gap: 10px;
+                a {
+                    box-sizing: border-box;
+                    font-size: 25px;
+                    border-radius: 20px;
+                    background: #eeeeee;
+                    color: #1d1d1d;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40px;
+                    height: 40px;
+                    transition: all 0.1s;
+                    &:hover {
+                        background: #bdbdbd;
+                    }
+                }
+                div#darkmodetoggle {
+                    margin-left: 10px;
+                    font-size: 17px;
+                    font-family: quicksand, sans-serif;
+                    background: #424242;
+                    height: 100%;
+                    border-radius: 20px;
+                    padding-left: 10px;
+                    cursor: default;
+                    div {
+                        padding: 5px;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+            div#profile-photo {
+                display: flex;
+                justify-content: center;
+            }
             div#intro {
+                float: right;
+                display: flex;
+                align-items: center;
                 h1 {
+                    font-size: 40px;
+                    font-family: quicksand;
                     span {
-                        font-size: 25px;
+                        font-size: 30px;
                     }
                 }
             }
