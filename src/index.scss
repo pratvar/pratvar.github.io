@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: roboto, sans-serif;
+}
+div#root {
+    margin: auto;
+    max-width: 800px;
+    nav {
+        float: right;
+        ul {
+            list-style: none;
+        }
+    }
+    div#body {
+        header {
+            
+            div#intro {
+                h1 {
+                    span {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
