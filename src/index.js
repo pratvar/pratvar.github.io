@@ -11,7 +11,7 @@ class DarkModeToggle extends React.Component {
         return (
             <div>
                 Dark mode
-                <Switch checked />
+                <Switch defaultChecked />
             </div>
         )
     }
