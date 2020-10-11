@@ -39,6 +39,9 @@ div#root {
                 a {
                     color: lightgray;
                     font-size: 20px;
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
         }
@@ -78,6 +81,7 @@ div#root {
                     }
                 }
                 div#darkmodetoggle {
+                    font-family: roboto mono;
                     font-size: 17px;
                     background: #1b1b1b;
                     height: 45px;
@@ -109,10 +113,12 @@ div#root {
                             animation: blink 1s infinite;
                         }
                         @keyframes blink {
-                            0% {color: white;}
-                            40% {color: #141414;}
-                            60% {color: #141414;}
-                            100% {color: white;}
+                            0% {color: #eeeeee;}
+                            15% {color: #eeeeee;}
+                            35% {color: #141414;}
+                            65% {color: #141414;}
+                            85% {color: #eeeeee;}
+                            100% {color: #eeeeee;}
                         }
                     }
                 }
@@ -132,6 +138,7 @@ div#root {
                 }
                 div {
                     color: #a3a3a3;
+                    text-align: center;
                     i {
                         margin-top: 10px;
                         margin-bottom: 50px;
@@ -157,19 +164,20 @@ div#root {
                 justify-content: center;
             }
             .skillset {
-                width: 500px;
+                max-width: 450px;
+                min-width: 300px;
                 margin: 0 10px;
                 margin-bottom: 20px;
                 cursor: default;
                 ul {
-                    padding: 10px;
+                    padding: 25px;
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: space-evenly;
                     background: #141414;
                     border-radius: 10px;
                     span {
-                        padding: 15px;
+                        font-family: roboto mono;
                         margin-bottom: 20px;
                         color: #999999;
                         flex-basis: 100%;
@@ -180,9 +188,9 @@ div#root {
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        margin-bottom: 30px;
+                        padding: 10px 0;
                         color: #eeeeee;
-                        height: 70px;
+                        height: 65px;
                         img {
                             height: 100%;
                         }
@@ -207,15 +215,146 @@ div#root {
                 }
             }
         }
+        section#projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-bottom: 60px;
+            h2 {
+                flex-basis: 100%;
+                text-align: center;
+                font-weight: normal;
+                margin: 60px 10px;
+            }
+            div#projects-grid {
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+                justify-content: center;
+                width: 900px;
+                .project {
+                    margin: 10px;
+                    border-radius: 10px;
+                    height: 221px;
+                    width: 330px;
+                    overflow: hidden;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: #1b1b1b;
+                    font-size: 20px;
+                    font-family: roboto mono;
+                    a {
+                        color: white;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                    img {
+                        width: 330px;
+                    }
+                    .project-link {
+                        cursor: default;
+                        transition: all 0.2s;
+                        background: rgb(41, 41, 41, 0.8);
+                        opacity: 0;
+                        z-index: 2;
+                        position: absolute;
+                        top: 0;
+                        width: 330px;
+                        height: 221px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        span {
+                            background: rgb(41, 41, 41, 0.5);
+                            border-radius: 10px;
+                            padding: 10px;
+                        }
+                        a {
+                            font-size: 18px;
+                            color: white;
+                            background: #d32f2f;
+                            padding: 10px;
+                            border-radius: 5px;
+                            transition: all 0.1s;
+                            &:hover {
+                                background: #e53935;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    &:hover {
+                        .project-link {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        section#contact {
+            background: #1b1b1b;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            min-width: 300px;
+            div#contact-form {
+                flex-basis: 50%;
+                padding: 20px;
+                h2 {
+                    text-align: center;
+                    font-weight: normal;
+                }
+                form {
+                    width: 100%;
+                }
+                div {
+                    width: 100%;
+                }
+            }
+            div#social-links {
+                
+            }
+        }
     }
 }
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 1280px) {
     div#root {
         div#body {
             section#about {
-                height: 100vh;
+                div#intro {
+                    justify-content: space-evenly;
+                    img {
+                        margin-left: 10px;
+                    }
+                    h1 {
+                        margin: 0 10px;
+                    }
+                }
+            }
+            section#projects {
+                div#projects-grid {
+                    grid-template-columns: auto auto;
+                    width: auto;
+                }
+            }
+            section#contact {
+                div#contact-form {
+                    flex-basis: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    div#root {
+        div#body {
+            section#about {
                 max-height: 100vh;
+                height: 100vh;
                 div#intro {
                     justify-content: space-evenly;
                     img {
@@ -229,3 +368,33 @@ div#root {
         }
     }
 }
+
+@media only screen and (max-width: 720px) {
+    div#root {
+        div#body {
+            section#projects {
+                div#projects-grid {
+                    grid-template-columns: auto;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+// @media only screen and (max-width: 480px) {
+//     div#root {
+//         div#body {
+//             section#skills {
+//                 .skillset {
+//                     ul {
+//                         width: 200px;
+//                         li {
+//                             height: 40px;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
