@@ -14,20 +14,26 @@ a {
 b {
     color: #ef9a9a;
 }
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 div#root {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 156px;
     grid-template-areas: "a b";
     nav {
-        background: #212121;
+        background: #222222;
         grid-area: b;
         font-family: roboto mono, consolas;
         height: 100vh;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        right: 0;
         ul {
             height: fit-content;
-            list-style: none;
-            padding: 0;
-            margin-top: 100px;
             li {
                 margin: 40px 30px;
                 a {
@@ -38,6 +44,8 @@ div#root {
         }
     }
     div#body {
+        z-index: 1;
+        box-shadow: 0 0 15px #000000;
         background: #141414;
         color: white;
         section#about {
@@ -54,11 +62,10 @@ div#root {
                 grid-template-columns: repeat(4, auto);
                 grid-gap: 10px;
                 a {
-                    box-sizing: border-box;
                     font-size: 25px;
                     border-radius: 20px;
-                    background: #252525;
-                    color: #eeeeee;
+                    background: #1b1b1b;
+                    color: #dddddd;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -67,14 +74,14 @@ div#root {
                     transition: all 0.1s;
                     &:hover {
                         background: #424242;
+                        color: #eeeeee;
                     }
                 }
                 div#darkmodetoggle {
-                    margin-left: 10px;
                     font-size: 17px;
                     background: #1b1b1b;
-                    height: 55px;
-                    border-radius: 20px;
+                    height: 45px;
+                    border-radius: 22.5px;
                     padding-left: 10px;
                     display: flex;
                     align-items: center;
@@ -96,7 +103,8 @@ div#root {
                     font-weight: normal;
                     span {
                         font-size: 30px;
-                        span {
+                        &:after {
+                            content: '|';
                             font-size: 35px;
                             animation: blink 1s infinite;
                         }
@@ -131,6 +139,74 @@ div#root {
                 }
             }
         }
+        section#skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: #1b1b1b;
+            padding-bottom: 50px;
+            h2 {
+                flex-basis: 100%;
+                text-align: center;
+                font-weight: normal;
+                margin: 50px 10px;
+            }
+            .skill-row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .skillset {
+                width: 500px;
+                margin: 0 10px;
+                margin-bottom: 20px;
+                cursor: default;
+                ul {
+                    padding: 10px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    background: #141414;
+                    border-radius: 10px;
+                    span {
+                        padding: 15px;
+                        margin-bottom: 20px;
+                        color: #999999;
+                        flex-basis: 100%;
+                        text-align: center;
+                    }
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 30px;
+                        color: #eeeeee;
+                        height: 70px;
+                        img {
+                            height: 100%;
+                        }
+                        .small {
+                            height: 80%;
+                        }
+                        .smaller {
+                            height: 55%;
+                        }
+                        .light-bg {
+                            background: #e0e0e0;
+                            padding: 5px 10px;
+                            border-radius: 25px;
+                        }
+                    }
+                    .break {
+                        height: 0;
+                        margin: 0;
+                        padding: 0;
+                        flex-basis: 100%;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -138,6 +214,8 @@ div#root {
     div#root {
         div#body {
             section#about {
+                height: 100vh;
+                max-height: 100vh;
                 div#intro {
                     justify-content: space-evenly;
                     img {
