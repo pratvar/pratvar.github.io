@@ -4,12 +4,14 @@ import ReactDOM from 'react-dom';
 import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
 
+document.body.classList.toggle('light-theme');
+
 class DarkModeToggle extends React.Component {
     render() {
         return (
             <div>
                 Dark mode
-                <Switch defaultChecked />
+                <Switch  onChange={() => {document.body.classList.toggle('light-theme');}} defaultChecked />
             </div>
         )
     }

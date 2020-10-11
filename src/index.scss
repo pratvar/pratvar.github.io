@@ -8,6 +8,7 @@ body {
     margin: 0;
     font-family: quicksand, sans-serif;
 }
+
 a {
     text-decoration: none;
 }
@@ -101,6 +102,7 @@ div#root {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                position: relative;
                 h1 {
                     margin-left: 200px;
                     font-size: 40px;
@@ -185,11 +187,9 @@ div#root {
                     }
                     li {
                         display: flex;
-                        flex-direction: column;
                         justify-content: center;
                         align-items: center;
                         padding: 10px 0;
-                        color: #eeeeee;
                         height: 65px;
                         img {
                             height: 100%;
@@ -268,7 +268,7 @@ div#root {
                         justify-content: center;
                         align-items: center;
                         span {
-                            background: rgb(41, 41, 41, 0.5);
+                            background: rgb(41, 41, 41, 0.9);
                             border-radius: 10px;
                             padding: 10px;
                         }
@@ -277,7 +277,7 @@ div#root {
                             color: white;
                             background: #d32f2f;
                             padding: 10px;
-                            border-radius: 5px;
+                            border-radius: 10px;
                             transition: all 0.1s;
                             &:hover {
                                 background: #e53935;
@@ -343,6 +343,118 @@ div#root {
             section#contact {
                 div#contact-form {
                     flex-basis: 100%;
+                }
+            }
+        }
+    }
+}
+
+.light-theme {
+    b {
+        color: #f44336;
+    }
+    div#root {
+        nav {
+            background: #eeeeee;
+            ul {
+                li {
+                    a {
+                        color: #424242;
+                    }
+                }
+            }
+        }
+        div#body {
+            box-shadow: 0 0 15px #757575;
+            background: white;
+            color: black;
+            section#about {
+                div#important-links {
+                    a {
+                        box-sizing: border-box;
+                        background: #fafafa;
+                        color: #212121;
+                        border: 1px solid #212121;
+                        &:hover {
+                            background: #ffcdd2;
+                        }
+                    }
+                    div#darkmodetoggle {
+                        background: #fafafa;
+                        box-sizing: border-box;
+                        border: 1px solid #212121;
+                    }
+                }
+                div#intro {
+                    h1 {
+                        span {
+                            @keyframes blink {
+                                0% {color: #141414;}
+                                15% {color: #141414;}
+                                35% {color: #ffffff;}
+                                65% {color: #ffffff;}
+                                85% {color: #141414;}
+                                100% {color: #141414;}
+                            }
+                        }
+                    }
+                }
+                div#description {
+                    p {
+                        background: #f5f5f5;
+                        border-radius: 10px;
+                    }
+                    div {
+                        color: #424242;
+                    }
+                }
+            }
+            section#skills {
+                background: #ffffff;
+                h2 {
+                    font-weight: bold;
+                }
+                .skillset {
+                    box-sizing: border-box;
+                    ul {
+                        border: 1px solid #eeeeee;
+                        span {
+                            color: #5a5a5a;
+                        }
+                        background: #fafafa;
+                        li {
+                            .light-bg {
+                                background: #fafafa;
+                            }
+                        }
+                    }
+                }
+            }
+            section#projects {
+                h2 {
+                    font-weight: bold;
+                }
+                div#projects-grid {
+                    .project {
+                        background: #f5f5f5;
+                        a {
+                            color: black;
+                        }
+                        .project-link {
+                            background: rgba(226, 226, 226, 0.8);
+                            span {
+                                background: rgba(255, 255, 255, 1);
+                            }
+                            a {
+                                background: #ef9a9a;
+                                box-sizing: border-box;
+                                border: 1px solid #212121;
+                                &:hover {
+                                    background: #ffcdd2;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
