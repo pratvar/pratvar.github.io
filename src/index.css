@@ -43,6 +43,10 @@ div#root nav ul {
 }
 div#root nav ul li {
   margin: 40px 30px;
+  box-sizing: border-box;
+  padding-left: 5px;
+  border-left: 3px solid transparent;
+  transition: all 0.1s;
 }
 div#root nav ul li a {
   color: lightgray;
@@ -50,6 +54,10 @@ div#root nav ul li a {
 }
 div#root nav ul li a:hover {
   text-decoration: underline;
+}
+div#root nav .active {
+  border-left: 3px solid #616161;
+  font-weight: bold;
 }
 div#root div#body {
   z-index: 1;
@@ -236,7 +244,7 @@ div#root div#body section#projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 div#root div#body section#projects h2 {
   flex-basis: 100%;
@@ -305,48 +313,164 @@ div#root div#body section#projects div#projects-grid .project .project-link a:ho
   background: #e53935;
   text-decoration: none;
 }
+div#root div#body section#projects div#projects-grid .project .focused {
+  opacity: 1;
+}
 div#root div#body section#projects div#projects-grid .project:hover .project-link {
   opacity: 1;
 }
 div#root div#body section#contact {
   background: #1b1b1b;
-  padding: 10px;
+  padding: 50px 10px;
   display: flex;
-  flex-wrap: wrap;
-  min-width: 300px;
 }
 div#root div#body section#contact div#contact-form {
+  display: flex;
+  justify-content: flex-start;
   flex-basis: 50%;
   padding: 20px;
 }
 div#root div#body section#contact div#contact-form h2 {
+  margin: 10px 0;
   text-align: center;
   font-weight: normal;
 }
+div#root div#body section#contact div#contact-form h2 span {
+  font-size: 20px;
+}
 div#root div#body section#contact div#contact-form form {
+  min-height: 500px;
+  max-width: 500px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #141414;
+  border-radius: 10px;
 }
-div#root div#body section#contact div#contact-form div {
-  width: 100%;
+div#root div#body section#contact div#contact-form form label {
+  font-size: 20px;
 }
-@media only screen and (max-width: 1280px) {
-  div#root div#body section#about div#intro {
-    justify-content: space-evenly;
-  }
-  div#root div#body section#about div#intro img {
-    margin-left: 10px;
-  }
-  div#root div#body section#about div#intro h1 {
-    margin: 0 10px;
-  }
-  div#root div#body section#projects div#projects-grid {
-    grid-template-columns: auto auto;
-    width: auto;
-  }
-  div#root div#body section#contact div#contact-form {
-    flex-basis: 100%;
-  }
+div#root div#body section#contact div#contact-form form input, div#root div#body section#contact div#contact-form form textarea {
+  margin: 20px 0;
+  width: 85%;
+  height: 20px;
+  font-family: quicksand, sans-serif;
+  background: #212121;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  outline: none;
+  border-radius: 5px;
+  transition: all 0.1s;
 }
+div#root div#body section#contact div#contact-form form input:hover, div#root div#body section#contact div#contact-form form input:focus, div#root div#body section#contact div#contact-form form textarea:hover, div#root div#body section#contact div#contact-form form textarea:focus {
+  background: #333333;
+}
+div#root div#body section#contact div#contact-form form textarea {
+  resize: vertical;
+  height: 200px;
+}
+div#root div#body section#contact div#contact-form form button {
+  width: 100px;
+  padding: 10px;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background: #c62828;
+  color: white;
+  font-family: quicksand, sans-serif;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.1s;
+}
+div#root div#body section#contact div#contact-form form button:hover, div#root div#body section#contact div#contact-form form button:focus {
+  background: #e53935;
+}
+div#root div#body section#contact div#contact-form form p {
+  font-size: 18px;
+}
+div#root div#body section#contact div#social-links {
+  flex-basis: 50%;
+  padding: 20px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+div#root div#body section#contact div#social-links div#twitter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+div#root div#body section#contact div#social-links div#twitter p {
+  margin: 25px 0;
+  display: flex;
+  justify-content: center;
+}
+div#root div#body section#contact div#social-links div#twitter div#daysofcode {
+  font-size: 15px;
+  color: #eeeeee;
+  background: #212121;
+  padding: 10px 20px;
+  margin: 10px 0;
+  width: fit-content;
+  border-radius: 10px;
+}
+div#root div#body section#contact div#social-links div#twitter i#hashtag {
+  color: #64b5f6;
+  font-family: roboto mono;
+  font-style: normal;
+}
+div#root div#body section#contact div#social-links div#links {
+  text-align: center;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+div#root div#body section#contact div#social-links div#links a {
+  width: fit-content;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 15px;
+  margin: 10px;
+  background: #212121;
+  border-radius: 5px;
+  transition: all 0.1s;
+}
+div#root div#body section#contact div#social-links div#links a i {
+  font-size: 35px;
+}
+div#root div#body section#contact div#social-links div#links a:hover {
+  background: #b71c1c;
+}
+div#root div#body footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #b4b4b4;
+  padding: 50px;
+}
+div#root div#body footer p {
+  padding: 10px;
+  margin: 0;
+}
+div#root div#body footer span {
+  font-size: 15px;
+  margin: 10px;
+}
+
 .light-theme b {
   color: #f44336;
 }
@@ -364,16 +488,17 @@ div#root div#body section#contact div#contact-form div {
 .light-theme div#root div#body section#about div#important-links a {
   box-sizing: border-box;
   background: #fafafa;
-  color: #212121;
-  border: 1px solid #212121;
+  color: #424242;
+  border: 1px solid #e0e0e0;
 }
 .light-theme div#root div#body section#about div#important-links a:hover {
   background: #ffcdd2;
+  border-color: #ef9a9a;
 }
 .light-theme div#root div#body section#about div#important-links div#darkmodetoggle {
   background: #fafafa;
   box-sizing: border-box;
-  border: 1px solid #212121;
+  border: 1px solid #e0e0e0;
 }
 @keyframes blink {
   0% {
@@ -444,7 +569,106 @@ div#root div#body section#contact div#contact-form div {
 .light-theme div#root div#body section#projects div#projects-grid .project .project-link a:hover {
   background: #ffcdd2;
 }
+.light-theme div#root div#body section#contact {
+  background: #ffffff;
+}
+.light-theme div#root div#body section#contact div#contact-form h2 {
+  font-weight: bold;
+}
+.light-theme div#root div#body section#contact div#contact-form form {
+  background: #eeeeee;
+  border: 1px solid #e0e0e0;
+}
+.light-theme div#root div#body section#contact div#contact-form form input, .light-theme div#root div#body section#contact div#contact-form form textarea {
+  border: 1px solid #e0e0e0;
+  background: #fafafa;
+  color: #000000;
+}
+.light-theme div#root div#body section#contact div#contact-form form input:hover, .light-theme div#root div#body section#contact div#contact-form form input:focus, .light-theme div#root div#body section#contact div#contact-form form textarea:hover, .light-theme div#root div#body section#contact div#contact-form form textarea:focus {
+  background: #ffffff;
+}
+.light-theme div#root div#body section#contact div#contact-form form button {
+  background: #d32f2f;
+}
+.light-theme div#root div#body section#contact div#contact-form form button:hover {
+  background: #f44336;
+}
+.light-theme div#root div#body section#contact div#social-links div#twitter div#daysofcode {
+  font-weight: 600;
+  background: #eeeeee;
+  color: black;
+  border: 1px solid #e0e0e0;
+}
+.light-theme div#root div#body section#contact div#social-links div#twitter i#hashtag {
+  color: #1565c0;
+}
+.light-theme div#root div#body section#contact div#social-links div#links {
+  font-weight: bold;
+}
+.light-theme div#root div#body section#contact div#social-links div#links a {
+  color: #000000;
+  background: #eeeeee;
+}
+.light-theme div#root div#body section#contact div#social-links div#links a:hover {
+  background: #d32f2f;
+  color: #ffffff;
+}
+.light-theme div#root div#body footer {
+  background: #eeeeee;
+  color: #424242;
+  font-weight: bold;
+}
 
+@media only screen and (max-width: 1280px) {
+  div#root {
+    display: block;
+  }
+  div#root nav {
+    display: none;
+  }
+  div#root div#body {
+    box-shadow: none;
+  }
+  div#root div#body section#about div#intro {
+    justify-content: space-evenly;
+  }
+  div#root div#body section#about div#intro img {
+    margin-left: 10px;
+  }
+  div#root div#body section#about div#intro h1 {
+    margin: 0 10px;
+  }
+  div#root div#body section#projects div#projects-grid {
+    grid-template-columns: auto auto;
+    width: auto;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  div#root div#body section#contact {
+    box-sizing: border-box;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  div#root div#body section#contact div#contact-form {
+    box-sizing: border-box;
+    flex-basis: 100%;
+    width: 100%;
+  }
+  div#root div#body section#contact div#contact-form form {
+    min-width: 300px;
+    max-width: 600px;
+    margin: auto;
+    min-height: fit-content;
+  }
+  div#root div#body section#contact div#social-links {
+    flex-basis: 100%;
+    align-items: center;
+  }
+  div#root div#body section#contact div#social-links div#links {
+    align-items: center;
+  }
+}
 @media only screen and (max-width: 768px) {
   div#root div#body section#about {
     max-height: 100vh;
@@ -459,11 +683,41 @@ div#root div#body section#contact div#contact-form div {
   div#root div#body section#about div#intro h1 {
     margin: 0 10px;
   }
+  div#root div#body section#contact div#contact-form {
+    padding: 20px 0;
+  }
+  div#root div#body section#contact div#contact-form form {
+    margin: auto;
+  }
 }
 @media only screen and (max-width: 720px) {
+  div#root div#body section#about {
+    height: auto;
+    max-height: fit-content;
+  }
+  div#root div#body section#about div#intro {
+    flex-direction: column-reverse;
+  }
+  div#root div#body section#about div#intro h1 {
+    margin: 30px 10px;
+  }
+  div#root div#body section#about div#intro img {
+    width: 220px;
+  }
+  div#root div#body section#about div#description p {
+    margin: 40px 10px;
+  }
   div#root div#body section#projects div#projects-grid {
     grid-template-columns: auto;
     width: auto;
+  }
+  div#root div#body section#contact div#social-links {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  div#root div#body footer {
+    flex-direction: column;
   }
 }
 
