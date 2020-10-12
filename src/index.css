@@ -158,12 +158,13 @@ div#root div#body section#about div#description {
   justify-content: space-between;
 }
 div#root div#body section#about div#description p {
-  margin: 40px 10px 100px 10px;
+  margin: 40px 20px 100px 20px;
   padding: 20px;
   font-size: 22px;
   background: #1b1b1b;
   height: fit-content;
   border-radius: 5px;
+  text-align: center;
 }
 div#root div#body section#about div#description div {
   color: #a3a3a3;
@@ -606,7 +607,7 @@ div#root div#body footer span {
   font-weight: bold;
 }
 .light-theme div#root div#body section#contact div#social-links div#links a {
-  color: #000000;
+  color: #212121;
   background: #eeeeee;
 }
 .light-theme div#root div#body section#contact div#social-links div#links a:hover {
@@ -644,6 +645,10 @@ div#root div#body footer span {
   }
 }
 @media only screen and (max-width: 1080px) {
+  div#root div#body section#about {
+    max-height: auto;
+    height: auto;
+  }
   div#root div#body section#contact {
     box-sizing: border-box;
     flex-direction: column-reverse;
@@ -654,6 +659,7 @@ div#root div#body footer span {
     box-sizing: border-box;
     flex-basis: 100%;
     width: 100%;
+    justify-content: center;
   }
   div#root div#body section#contact div#contact-form form {
     min-width: 300px;
@@ -671,8 +677,8 @@ div#root div#body footer span {
 }
 @media only screen and (max-width: 768px) {
   div#root div#body section#about {
-    max-height: 100vh;
-    height: 100vh;
+    max-height: auto;
+    height: auto;
   }
   div#root div#body section#about div#intro {
     justify-content: space-evenly;
@@ -695,6 +701,14 @@ div#root div#body footer span {
     height: auto;
     max-height: fit-content;
   }
+  div#root div#body section#about div#important-links {
+    grid-template-columns: auto auto 1fr;
+    align-self: center;
+    width: 95%;
+  }
+  div#root div#body section#about div#important-links div {
+    justify-self: right;
+  }
   div#root div#body section#about div#intro {
     flex-direction: column-reverse;
   }
@@ -705,7 +719,7 @@ div#root div#body footer span {
     width: 220px;
   }
   div#root div#body section#about div#description p {
-    margin: 40px 10px;
+    margin: 40px 20px;
   }
   div#root div#body section#projects div#projects-grid {
     grid-template-columns: auto;
@@ -714,10 +728,8 @@ div#root div#body footer span {
   div#root div#body section#contact div#social-links {
     padding: 0;
   }
-}
-@media only screen and (max-width: 480px) {
   div#root div#body footer {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 
