@@ -40,7 +40,7 @@ class DarkModeToggle extends React.Component {
     render() {
         return (
             <div>
-                Dark mode
+                <i class="fa fa-moon"></i>
                 <Switch  onChange={() => {
                     document.body.classList.toggle('light-theme');
                     }} defaultChecked />
