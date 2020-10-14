@@ -1,6 +1,7 @@
 import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 
 document.body.classList.toggle('light-theme');
@@ -38,12 +39,14 @@ for(let i = 0; i < links.length; i++) {
 
 class DarkModeToggle extends React.Component {
     render() {
+        const moon = <i className="fa fa-moon"></i>
         return (
             <div>
-                <i class="fa fa-moon"></i>
-                <Switch  onChange={() => {
+                <FormControlLabel control={<Switch  onChange={() => {
                     document.body.classList.toggle('light-theme');
-                    }} defaultChecked />
+                    }} defaultChecked />}
+                    label={moon}
+                    labelPlacement="start" />
             </div>
         )
     }
@@ -61,8 +64,11 @@ class ContactForm extends React.Component {
         return (
             <form onSubmit={this.submitForm} action="https://formspree.io/f/xleogqql" method="POST">
                 <h2>Interested in working together?<br/><span><b>Send me a message!</b></span></h2>
+                <label htmlFor="name">Name</label>
                 <input type="text" name="name" id="name" placeholder="Name"/>
+                <label htmlFor="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Email" />
+                <label htmlFor="message">Message</label>
                 <textarea name="message" id="message" placeholder="Message" />
                 {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
                 {status === "ERROR" && <p>Ooops! There was an error.</p>}

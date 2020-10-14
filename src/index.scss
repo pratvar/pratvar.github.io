@@ -20,6 +20,11 @@ ul {
     padding: 0;
     margin: 0;
 }
+label {
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+}
 
 div#root {
     display: grid;
@@ -97,14 +102,14 @@ div#root {
                     color: #dddddd;
                     height: 45px;
                     border-radius: 22.5px;
-                    padding-left: 10px;
                     display: flex;
                     align-items: center;
                     cursor: default;
                     div {
-                        padding: 5px;
-                        display: flex;
-                        align-items: center;
+                        label {
+                            margin: 0;
+                            padding: 0 5px 0 15px;
+                        }
                     }
                 }
             }
@@ -362,9 +367,6 @@ div#root {
                     box-sizing: border-box;
                     background: #141414;
                     border-radius: 10px;
-                    label {
-                        font-size: 20px;
-                    }
                     input, textarea {
                         margin: 20px 0;
                         width: 85%;
@@ -775,7 +777,7 @@ div#root {
                 height: auto;
                 max-height: fit-content;
                 div#important-links {
-                    grid-template-columns: auto auto 1fr;
+                    grid-template-columns: auto auto auto 1fr;
                     align-self: center;
                     width: 95%;
                     div {

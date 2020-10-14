@@ -23,6 +23,12 @@ ul {
   margin: 0;
 }
 
+label {
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+}
+
 div#root {
   display: grid;
   grid-template-columns: 1fr 156px;
@@ -103,15 +109,13 @@ div#root div#body section#about div#important-links div#darkmodetoggle {
   color: #dddddd;
   height: 45px;
   border-radius: 22.5px;
-  padding-left: 10px;
   display: flex;
   align-items: center;
   cursor: default;
 }
-div#root div#body section#about div#important-links div#darkmodetoggle div {
-  padding: 5px;
-  display: flex;
-  align-items: center;
+div#root div#body section#about div#important-links div#darkmodetoggle div label {
+  margin: 0;
+  padding: 0 5px 0 15px;
 }
 div#root div#body section#about div#intro {
   display: flex;
@@ -378,9 +382,6 @@ div#root div#body section#contact div#contact-form form {
   box-sizing: border-box;
   background: #141414;
   border-radius: 10px;
-}
-div#root div#body section#contact div#contact-form form label {
-  font-size: 20px;
 }
 div#root div#body section#contact div#contact-form form input, div#root div#body section#contact div#contact-form form textarea {
   margin: 20px 0;
@@ -743,7 +744,7 @@ div#root div#body footer span {
     max-height: fit-content;
   }
   div#root div#body section#about div#important-links {
-    grid-template-columns: auto auto 1fr;
+    grid-template-columns: auto auto auto 1fr;
     align-self: center;
     width: 95%;
   }
